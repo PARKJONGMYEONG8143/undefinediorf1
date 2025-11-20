@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>양자역학 한눈에 보기</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --bg: #0b1021;
+      --panel: #121832;
+      --accent: #5cd9e5;
+      --text: #e8ecf7;
+      --muted: #b8c2d6;
+      --shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: "Pretendard", "Noto Sans KR", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: radial-gradient(circle at 30% 20%, rgba(92, 217, 229, 0.15), transparent 35%),
+        radial-gradient(circle at 80% 10%, rgba(116, 113, 245, 0.2), transparent 30%),
+        radial-gradient(circle at 60% 70%, rgba(55, 231, 164, 0.15), transparent 25%),
+        var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      min-height: 100vh;
+    }
+
+    header {
+      padding: 80px 20px 60px;
+      text-align: center;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 14px;
+      border-radius: 999px;
+      background: rgba(92, 217, 229, 0.1);
+      color: var(--accent);
+      letter-spacing: 0.04em;
+      font-weight: 700;
+      font-size: 13px;
+      text-transform: uppercase;
+      border: 1px solid rgba(92, 217, 229, 0.3);
+      box-shadow: var(--shadow);
+    }
+
+    h1 {
+      margin: 18px 0 12px;
+      font-size: clamp(32px, 6vw, 48px);
+      font-weight: 800;
+      letter-spacing: -0.02em;
+    }
+
+    .subtitle {
+      max-width: 720px;
+      margin: 0 auto;
+      color: var(--muted);
+      font-size: 18px;
+    }
+
+    main {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 24px 80px;
+      display: grid;
+      gap: 28px;
+    }
+
+    section {
+      background: var(--panel);
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      border-radius: 18px;
+      padding: 22px 24px;
+      box-shadow: var(--shadow);
+    }
+
+    h2 {
+      margin-top: 0;
+      font-size: 22px;
+      letter-spacing: -0.01em;
+    }
+
+    p { color: var(--muted); }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 16px;
+      margin-top: 14px;
+    }
+
+    .card {
+      padding: 16px;
+      border-radius: 14px;
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.06);
+    }
+
+    .card h3 {
+      margin: 0 0 8px;
+      font-size: 18px;
+    }
+
+    .card p { margin: 0; }
+
+    .timeline {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 12px;
+    }
+
+    .step {
+      border-left: 3px solid var(--accent);
+      padding-left: 12px;
+    }
+
+    .pill-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 12px;
+    }
+
+    .pill {
+      padding: 10px 14px;
+      border-radius: 999px;
+      background: rgba(92, 217, 229, 0.15);
+      color: var(--text);
+      border: 1px solid rgba(92, 217, 229, 0.35);
+      font-weight: 600;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="badge">Quantum Mechanics · 핵심 요약</div>
+    <h1>양자역학, 미시 세계의 언어</h1>
+    <p class="subtitle">
+      원자의 크기보다 작은 세계는 고전역학이 설명하지 못한 이상한 규칙을 따릅니다.
+      양자역학은 파동성과 입자성, 확률적 세계관을 통해 미시 세계를 이해하는 현대 물리학의 기본 언어입니다.
+    </p>
+  </header>
+
+  <main>
+    <section>
+      <h2>왜 양자역학이 필요할까?</h2>
+      <p>
+        전자와 같은 미시 입자는 빛처럼 간섭과 회절을 보이면서도 동시에 입자처럼 측정됩니다.
+        이러한 이중성은 행성과 같은 거시 물체에는 나타나지 않아 고전적인 개념으로 설명할 수 없습니다.
+        양자역학은 파동 함수로 상태를 표현하고, 관측이 확률을 결정한다는 새로운 틀을 제공합니다.
+      </p>
+    </section>
+
+    <section>
+      <h2>핵심 개념</h2>
+      <div class="grid">
+        <div class="card">
+          <h3>파동-입자 이중성</h3>
+          <p>전자·광자는 간섭 무늬를 만드는 파동처럼 행동하면서도 특정 위치에서 검출되는 입자입니다.</p>
+        </div>
+        <div class="card">
+          <h3>슈뢰딩거 방정식</h3>
+          <p>파동 함수의 시간 변화를 규정하는 기본 방정식으로, 해의 절댓값 제곱이 입자의 존재 확률을 줍니다.</p>
+        </div>
+        <div class="card">
+          <h3>중첩</h3>
+          <p>여러 상태가 동시에 존재할 수 있으며, 측정 순간 특정 결과로 확률적으로 수축합니다.</p>
+        </div>
+        <div class="card">
+          <h3>불확정성 원리</h3>
+          <p>위치와 운동량처럼 특정 쌍의 물리량은 동시에 임의의 정밀도로 측정될 수 없습니다.</p>
+        </div>
+        <div class="card">
+          <h3>측정과 붕괴</h3>
+          <p>관측 행위가 파동 함수의 가능한 결과 중 하나로 "붕괴"시키며, 결과는 확률 분포를 따릅니다.</p>
+        </div>
+        <div class="card">
+          <h3>얽힘</h3>
+          <p>두 입자의 상태가 공간과 무관하게 상호 연관되어, 하나의 측정이 다른 하나의 결과를 즉시 결정합니다.</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>대표적 실험</h2>
+      <div class="grid">
+        <div class="card">
+          <h3>이중 슬릿 실험</h3>
+          <p>단일 전자가 두 슬릿을 통과할 때도 간섭 무늬가 생기며, 관측 시 간섭이 사라집니다.</p>
+        </div>
+        <div class="card">
+          <h3>광전 효과</h3>
+          <p>빛이 금속 표면에서 전자를 방출시키는 현상으로, 빛이 양자화된 광자라는 사실을 보여줍니다.</p>
+        </div>
+        <div class="card">
+          <h3>슈테른–게를라흐 실험</h3>
+          <p>은 원자를 비균일 자기장에 통과시켜 스핀이라는 양자적 각운동량이 양자화됨을 확인합니다.</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>역사적 흐름</h2>
+      <div class="timeline">
+        <div class="card step">
+          <h3>1900년 · 플랑크</h3>
+          <p>에너지의 양자화 가설 제안, 흑체 복사 문제 해결.</p>
+        </div>
+        <div class="card step">
+          <h3>1905년 · 아인슈타인</h3>
+          <p>광전 효과 해석으로 광자의 존재 주장.</p>
+        </div>
+        <div class="card step">
+          <h3>1925~1926년 · 하이젠베르크 &amp; 슈뢰딩거</h3>
+          <p>행렬역학과 파동역학의 정립, 현대 양자역학의 탄생.</p>
+        </div>
+        <div class="card step">
+          <h3>1935년 · EPR 논문</h3>
+          <p>양자 얽힘과 비국소성 문제 제기, 이후 벨 부등식 실험으로 검증.</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>기술 응용</h2>
+      <p>양자역학은 현대 기술의 핵심 이론적 기반입니다.</p>
+      <div class="pill-list">
+        <div class="pill">반도체와 트랜지스터</div>
+        <div class="pill">레이저와 광통신</div>
+        <div class="pill">자기공명영상(MRI)</div>
+        <div class="pill">양자암호 &amp; 양자키분배</div>
+        <div class="pill">양자컴퓨팅 및 큐비트</div>
+        <div class="pill">초전도 &amp; 초유체</div>
+      </div>
+    </section>
+
+    <section>
+      <h2>양자역학을 더 이해하려면</h2>
+      <div class="grid">
+        <div class="card">
+          <h3>수학적 언어</h3>
+          <p>선형대수(벡터, 행렬), 복소수, 미분방정식이 파동 함수 표현에 필수입니다.</p>
+        </div>
+        <div class="card">
+          <h3>직관을 기르는 방법</h3>
+          <p>가능한 상태의 확률 분포를 먼저 그린 뒤, 실험에서 관측되는 패턴을 대입해보세요.</p>
+        </div>
+        <div class="card">
+          <h3>심화 키워드</h3>
+          <p>브라–켓 표기법, 밀도 행렬, 퍼텐셜 우물, 터널링, 스핀 궤도 상호작용을 살펴보면 이해가 확장됩니다.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>Designed for a quick but structured glance at the quantum world.</footer>
+</body>
+</html>
